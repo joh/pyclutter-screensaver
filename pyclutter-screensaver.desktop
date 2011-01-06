@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=PyClutter Screensaver
+Comment=Example screensaver using PyClutter
+Exec=/usr/lib/xscreensaver/pyclutter-screensaver.py
+TryExec=/usr/lib/xscreensaver/pyclutter-screensaver.py
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=GNOME;Screensaver;
+OnlyShowIn=GNOME;
