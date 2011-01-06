@@ -2,18 +2,9 @@
 """
 Example clutter screensaver
 """
-
-import time
 import os
-from threading import Thread, Event, Condition, RLock
-
-import glib
-import gobject
 import clutter
 import clutter.x11
-
-gobject.threads_init()
-clutter.threads_init()
 
 class Screensaver(object):
     def __init__(self):
