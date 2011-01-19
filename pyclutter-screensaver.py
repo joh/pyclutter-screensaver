@@ -5,6 +5,7 @@ Example clutter screensaver
 import os
 import clutter
 import clutter.x11
+import signal
 
 class Screensaver(object):
     def __init__(self):
@@ -22,6 +23,9 @@ class Screensaver(object):
         if 'XSCREENSAVER_WINDOW' in os.environ:
             xwin = int(os.environ['XSCREENSAVER_WINDOW'], 0)
             clutter.x11.set_stage_foreign(self.stage, xwin)
+        
+        # Allow SIGINT to pass through
+        signal.signal(signal.SIGINT, signal.SIG_DFL)
         
         # Text
         self.text = clutter.Text()
