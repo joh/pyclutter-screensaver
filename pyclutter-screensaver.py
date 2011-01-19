@@ -3,6 +3,7 @@
 Example clutter screensaver
 """
 import os
+import signal
 import clutter
 import clutter.x11
 import glib
@@ -25,6 +26,9 @@ class Screensaver(object):
             print 'XSCREENSAVER_WINDOW=' + os.environ['XSCREENSAVER_WINDOW']
             xwin = int(os.environ['XSCREENSAVER_WINDOW'], 0)
             clutter.x11.set_stage_foreign(self.stage, xwin)
+        
+        # Allow SIGINT to pass through
+        signal.signal(signal.SIGINT, signal.SIG_DFL)
         
         # Rect
         self.rect = clutter.Rectangle()
