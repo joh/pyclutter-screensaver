@@ -1,4 +1,8 @@
 import clutter
+import signal
+
+# Allow Ctrl+C to pass through
+signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 stage = clutter.Stage()
 stage.set_size(200, 200)
